@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/leoloom-logo.svg" alt="LeoLoom — projects, people, impact" width="560">
+</p>
+
 # LeoLoom
 
 ### A clearer way to plan, document, and report service projects

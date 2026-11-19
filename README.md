@@ -5,7 +5,9 @@
 **Project management · Member coordination · Evidence · Reporting**  
 Digital secretary portal | 2026/27 service year
 
-LeoLoom brings the work of a volunteer service club into one shared workspace. Officers can start a project record during planning, update it as the work progresses, attach supporting media, and use the completed record for reporting and handover. This repository is a public case study; the application source and operational data remain private.
+LeoLoom is a digital secretary portal that turns fragmented project information into a clear, lasting record of service. It connects planning, people, progress, evidence, and impact in one shared workspace, so officers can manage work as it happens and carry reliable records into reporting and future handovers. Built around the real administrative demands of a volunteer service club, it makes continuity part of the workflow instead of an afterthought.
+
+This repository is a public case study; the application source and operational data remain private.
 
 ---
 

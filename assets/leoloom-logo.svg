@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180" viewBox="0 0 760 180" role="img" aria-labelledby="title desc">
+  <title id="title">LeoLoom</title>
+  <desc id="desc">An interwoven line mark beside the LeoLoom wordmark</desc>
+  <rect width="760" height="180" fill="none"/>
+  <g transform="translate(26 20)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="140" height="140" rx="32" fill="#10243D" stroke="none"/>
+    <path d="M38 35v70h63" stroke="#80E0C3" stroke-width="13"/>
+    <path d="M64 35v70" stroke="#FFFFFF" stroke-width="10"/>
+    <path d="M92 35v70" stroke="#FFFFFF" stroke-width="10"/>
+    <path d="M35 62h67" stroke="#80E0C3" stroke-width="10"/>
+    <path d="M35 91h67" stroke="#80E0C3" stroke-width="10"/>
+    <path d="M64 57v11M92 86v11" stroke="#10243D" stroke-width="10"/>
+  </g>
+  <text x="190" y="104" font-family="Segoe UI, Arial, sans-serif" font-size="74" font-weight="700" letter-spacing="-3" fill="#10243D">Leo<tspan fill="#159B7C">Loom</tspan></text>
+  <text x="195" y="138" font-family="Segoe UI, Arial, sans-serif" font-size="22" letter-spacing="3" fill="#62758B">PROJECTS · PEOPLE · IMPACT</text>
+</svg>
+

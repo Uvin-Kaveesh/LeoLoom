@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/leoloom-logo-v2.svg" alt="LeoLoom — projects, people, impact" width="560">
+  <img src="assets/leoloom-original-enhanced.jpg" alt="LeoLoom Secretary Portal logo" width="680">
 </p>
 
 # LeoLoom

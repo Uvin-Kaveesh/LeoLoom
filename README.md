@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/leoloom-logo.svg?v=2" alt="LeoLoom — projects, people, impact" width="560">
+  <img src="assets/leoloom-logo-v2.svg" alt="LeoLoom — projects, people, impact" width="560">
 </p>
 
 # LeoLoom

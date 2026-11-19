@@ -1,56 +1,100 @@
 # LeoLoom
 
-**A project management and reporting portal for a volunteer service club**
+### A clearer way to plan, document, and report service projects
 
-LeoLoom is a digital secretary workspace developed during the 2026/27 service year. It brings project planning, responsibility assignments, progress tracking, evidence, and reporting information into one shared system. This repository is a public project report. The operational source repositories and club records remain private.
+**Project management · Member coordination · Evidence · Reporting**  
+Digital secretary portal | 2026/27 service year
 
-## The problem
+LeoLoom brings the work of a volunteer service club into one shared workspace. Officers can start a project record during planning, update it as the work progresses, attach supporting media, and use the completed record for reporting and handover. This repository is a public case study; the application source and operational data remain private.
 
-Project details were spread across personal devices, messages, documents, and spreadsheets. Preparing a report meant collecting updates again from different people. A change of officers could also leave the next team without a searchable account of earlier work. LeoLoom was built to make each project a durable, structured record that can be updated throughout its lifecycle.
+---
 
-## Development path
+## At a glance
 
-1. An earlier single-file browser page stored information locally on one device.
-2. The first shared implementation introduced a Java Spring Boot backend, SQLite persistence, a project dashboard, committee records, project photos, and spreadsheet-compatible export. Its administrator model used a shared password.
-3. The later portal expanded the system with individual accounts, Administrator/Admin/Member roles, email verification, member profiles, activity records, controlled deletion requests, additional project media, and a Progressive Web App interface. The final repository also contains a TypeScript serverless API for hosted operation.
-
-The second implementation is the final contribution. The earlier repository represents a development stage of the same project.
-
-## What the portal supports
-
-| Area | Capability |
+| Challenge | LeoLoom's approach |
 | --- | --- |
-| Project records | Planning details, dates, venue, status, subtasks, responsibilities, and notes |
-| Reporting | Participation, beneficiaries, service hours, finances, community needs, and spreadsheet-compatible export |
-| Tracking | Search, status filters, record-completeness progress, and due-date indicators |
-| People | Committee records, member profiles, and links between accounts and project roles |
-| Media | Project thumbnails, covers, and organized photographs |
-| Administration | Role-based access, shared categories, activity history, and deletion review |
+| Details scattered across messages, files, and devices | One structured record per project |
+| Repeated follow-up before reporting deadlines | Progress and missing information remain visible throughout the project |
+| Responsibilities becoming unclear after a board change | Project roles and historical assignments stay with the record |
+| Photographs separated from project information | Media is organized alongside the relevant project |
 
-Progress represents the completeness of a project record. It is separate from the project's operational status, so a completed activity can still show missing reporting information. Historical assignments remain on project records when committee membership changes.
+## How a project moves through LeoLoom
 
-## Technical outline
+```mermaid
+flowchart LR
+    A[Create a project] --> B[Plan and assign roles]
+    B --> C[Track work and subtasks]
+    C --> D[Record participation and impact]
+    D --> E[Attach photos and evidence]
+    E --> F[Export and hand over]
+    C -. Update details .-> B
+    E -. Complete missing fields .-> D
+```
 
-- **Backend:** Java 17, Spring Boot, REST endpoints, and Spring Data JPA.
-- **Data:** SQLite for local use; the final implementation includes PostgreSQL support for hosted deployments.
-- **Hosted API:** A TypeScript serverless API is present alongside the Spring Boot application.
-- **Frontend:** HTML, CSS, and framework-free JavaScript, with responsive layouts and Progressive Web App files.
-- **Media:** Images are reduced before upload and stored separately from ordinary project records. The final implementation includes private object-storage support.
-- **Access:** Individual accounts with Administrator, Admin, and Member roles. Public member information is separated from private contact details.
+The portal tracks **project status** and **record completeness** separately. An activity may be finished while its report still needs details. That distinction helps officers see the actual documentation gap.
 
-These are implementation capabilities visible in the private source. This report does not claim measured reductions in reporting time, adoption figures, or production uptime.
+## Feature map
 
-## Contribution and outcome
+```mermaid
+flowchart TB
+    L[LeoLoom portal]
+    L --> P[Projects]
+    L --> M[People]
+    L --> E[Evidence]
+    L --> R[Reporting]
+    L --> A[Administration]
+    P --> P1[Planning, status, subtasks]
+    P --> P2[Search, filters, deadlines]
+    M --> M1[Committee and project roles]
+    M --> M2[Member profiles]
+    E --> E1[Thumbnails, covers, photos]
+    R --> R1[Participation and impact]
+    R --> R2[Spreadsheet-compatible export]
+    A --> A1[Role-based access]
+    A --> A2[Activity history and deletion review]
+```
 
-LeoLoom turns secretary work into an ongoing workflow: create a project record early, assign people, add evidence and impact details as work proceeds, then use the same record for reporting and handover. The resulting archive gives future officers a clearer account of what was planned, who was responsible, and what was delivered.
+### What the records contain
 
-The key design choices were to preserve historical project assignments, separate status from documentation completeness, restrict destructive operations, keep normal project views lightweight, and expose only suitable member details through public-facing responses.
+Project records can capture dates, venue, category, assigned members, chairperson, secretary, treasurer, subtasks, participant counts, beneficiaries, service hours, funds, project value, community needs, objectives, descriptions, and notes. Search and status filters make these records easier to find. Due-date indicators and completeness progress help identify work that needs attention.
 
-## Privacy and publication
+Historical assignments remain on earlier projects when committee membership changes. Images are kept separately from ordinary project data to keep routine browsing lightweight.
 
-This public report intentionally omits the club's identity, member names, private project records, credentials, internal endpoints, and operational URLs. It is a description of the work, not a deployment guide or a release of the private application source.
+## From prototype to final portal
 
-## Scope of this report
+| Stage | Main change |
+| --- | --- |
+| Local prototype | A single browser page stored data on one device. |
+| First shared implementation | Spring Boot and SQLite enabled shared project records, a dashboard, committee management, photos, and export. |
+| Final contribution | Individual accounts, Administrator/Admin/Member roles, email verification, profiles, activity history, deletion review, more media support, and a Progressive Web App interface. A TypeScript serverless API was also added for hosted operation. |
 
-This summary was prepared from the two private development repositories and the LeoLoom project report. It describes the evolution and documented capabilities of the system. It does not include source code, screenshots, or data from those private materials.
+The two private repositories document stages of the same project. The later portal is the final contribution.
+
+## Technical design
+
+```mermaid
+flowchart LR
+    U[Members and officers] --> UI[Responsive web interface and PWA]
+    UI --> API[Application API]
+    API --> DB[(Project and account data)]
+    API --> STORE[(Private media storage)]
+    API --> AUTH[Roles and access controls]
+```
+
+- **Application:** Java 17, Spring Boot, REST endpoints, and Spring Data JPA.
+- **Data:** SQLite for local use, with PostgreSQL support in the final hosted implementation.
+- **Hosted API:** TypeScript serverless API alongside the Spring Boot application.
+- **Interface:** HTML, CSS, and framework-free JavaScript with responsive layouts and Progressive Web App files.
+- **Media:** Images are reduced before upload; the final implementation includes private object-storage support.
+- **Access:** Administrator, Admin, and Member roles. Public member details are separated from private contact information.
+
+This diagram shows the main responsibilities of the system, not a complete deployment topology. The source demonstrates these capabilities; this report does not claim measured time savings, adoption figures, or uptime.
+
+## Why it matters
+
+LeoLoom makes project documentation an ongoing part of the work. A consistent record can show what was planned, who was responsible, what happened, and which evidence supports the report. That gives current officers a clearer view of their projects and gives future officers a more useful archive at handover.
+
+## About this public report
+
+This case study was prepared from the project's two private development repositories and its project report. It intentionally omits the club's identity, member names, private records, credentials, internal endpoints, and operational URLs. It contains no application source code or private project data.
 
